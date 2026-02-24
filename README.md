@@ -1,7 +1,7 @@
-# ATM Management System
+# atm-management-system
 
 ## 🚀 Live Demo
-👉 [Click Here to View Project](https://24a31a4393.github.io/repository-name/)
+👉 [Click Here to View Project](https://24a31a4393.github.io/atm-management-system/)
 
 ## 📌 Description
 Simple ATM system using HTML, CSS and JavaScript.
