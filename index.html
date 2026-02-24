@@ -1,117 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple ATM Machine</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            margin-top: 50px;
-        }
-        .atm-box {
-            background: white;
-            padding: 20px;
-            width: 300px;
-            margin: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px gray;
-        }
-        input {
-            padding: 8px;
-            margin: 5px;
-            width: 80%;
-        }
-        button {
-            padding: 8px 15px;
-            margin: 5px;
-            cursor: pointer;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+    <title>ATM Management System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="atm-box">
-    <h2>ATM Machine</h2>
+    <div class="container">
+        <h1>ATM Machine</h1>
 
-    <!-- Login Section -->
-    <div id="loginSection">
-        <p>Enter PIN:</p>
-        <input type="password" id="pinInput" placeholder="Enter 4-digit PIN">
-        <br>
-        <button onclick="login()">Login</button>
-        <p id="loginMessage" style="color:red;"></p>
+        <div id="loginSection">
+            <h3>Enter PIN</h3>
+            <input type="password" id="pinInput" placeholder="Enter PIN">
+            <button onclick="login()">Login</button>
+            <p id="loginMsg"></p>
+        </div>
+
+        <div id="atmSection" style="display:none;">
+            <h3>Balance: ₹<span id="balance">1000</span></h3>
+
+            <input type="number" id="amount" placeholder="Enter Amount">
+            <button onclick="deposit()">Deposit</button>
+            <button onclick="withdraw()">Withdraw</button>
+            <button onclick="logout()">Logout</button>
+
+            <p id="message"></p>
+        </div>
     </div>
 
-    <!-- ATM Menu Section -->
-    <div id="atmSection" class="hidden">
-        <h3>Welcome!</h3>
-        <p>Balance: ₹<span id="balance">1000</span></p>
-
-        <input type="number" id="amount" placeholder="Enter amount">
-        <br>
-
-        <button onclick="deposit()">Deposit</button>
-        <button onclick="withdraw()">Withdraw</button>
-        <br>
-        <button onclick="logout()">Logout</button>
-
-        <p id="message"></p>
-    </div>
-</div>
-
-<script>
-    let correctPin = "1234";
-    let balance = 1000;
-
-    function login() {
-        let pin = document.getElementById("pinInput").value;
-        if (pin === correctPin) {
-            document.getElementById("loginSection").classList.add("hidden");
-            document.getElementById("atmSection").classList.remove("hidden");
-        } else {
-            document.getElementById("loginMessage").innerText = "Incorrect PIN!";
-        }
-    }
-
-    function deposit() {
-        let amount = parseFloat(document.getElementById("amount").value);
-        if (amount > 0) {
-            balance += amount;
-            updateBalance();
-            document.getElementById("message").innerText = "Deposit successful!";
-        } else {
-            document.getElementById("message").innerText = "Enter valid amount.";
-        }
-    }
-
-    function withdraw() {
-        let amount = parseFloat(document.getElementById("amount").value);
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
-            updateBalance();
-            document.getElementById("message").innerText = "Withdrawal successful!";
-        } else {
-            document.getElementById("message").innerText = "Insufficient balance or invalid amount.";
-        }
-    }
-
-    function updateBalance() {
-        document.getElementById("balance").innerText = balance;
-        document.getElementById("amount").value = "";
-    }
-
-    function logout() {
-        document.getElementById("atmSection").classList.add("hidden");
-        document.getElementById("loginSection").classList.remove("hidden");
-        document.getElementById("pinInput").value = "";
-        document.getElementById("message").innerText = "";
-    }
-</script>
-
+<script src="script.js"></script>
 </body>
+</html>
 
 </html>
+
