@@ -1,19 +1,17 @@
 # ATM Management System
 
-## 📌 Description
-This is a simple ATM Management System developed using HTML, CSS and JavaScript.
+## 🚀 Live Demo
+👉 [Click Here to View Project](https://24a31a4393.github.io/repository-name/)
 
-## 🚀 Features
-- User Login with PIN
-- Balance Check
+## 📌 Description
+Simple ATM system using HTML, CSS and JavaScript.
+
+## ✨ Features
+- Login with PIN
 - Deposit Money
 - Withdraw Money
-- Logout Option
-
-## 🛠 Technologies Used
-- HTML
-- CSS
-- JavaScript
+- Balance Check
+- Logout
 
 ## 👤 Author
 Satya Sharon
